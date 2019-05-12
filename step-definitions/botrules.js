@@ -24,6 +24,8 @@ module.exports = function(){
 
     this.Then(/^the bots should follow the rules throughout the game\.$/, {timeout: 60 * 1000}, async function () {
     await sleep(sleepTime * 50);
+    await driver.findElement(By.css('.text-center'));
+    assert.isNotNull('.text-center');
     await driver.findElement(By.css('.board.shown')).takeScreenshot();
   });
 
